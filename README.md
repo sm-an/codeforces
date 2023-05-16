@@ -18,20 +18,6 @@ else:
     print('NO')
 ```
 
-👉️ update: Решение не удовлетворяет условиям (6 кг разделятся на 3, что является нечетным). Тесты никудышные, ибо не предусмотрено ничегошеньки :)
-
-Вот верное решение:
-
-```python
-w = int(input())
-if w % 2 == 0 and w // 2 % 2 == 0:
-    print('YES')
-else:
-    print('NO')
-```
-
-
-
 ---
 
 ### 2) 71A - Way Too Long Words - https://codeforces.com/problemset/problem/71/A
@@ -148,4 +134,48 @@ for num in s:
     result += num  # прибавляем число
     result += '+'  # прибавляем плюсы
 print(result[:-1])  # обрезаем плюс в конце
+```
+
+---
+---
+---
+
+### 8) 236A - Boy or Girl - https://codeforces.com/problemset/problem/236/A
+
+```
+nick = input()
+chars = set(nick)
+if len(chars) % 2 == 1:
+    print("IGNORE HIM!")
+else:
+    print("CHAT WITH HER!")
+```
+
+### 9) 266A - Stones on the Table - https://codeforces.com/problemset/problem/266/A
+
+```python
+count = int(input())  # по сути выдали len(stones) просто. бесполезное(
+stones = input()
+skolko_ubrat = 0
+i = 0
+while i < len(stones) - 1:  # -1 за длину -> индекс, -1 за предпоследний элемент
+    if stones[i] == stones[i+1]:  # если текущая и след. буквы одинаковы
+        stones = stones[:i] + stones[i+1:]  # вырезаем текущую букву
+        skolko_ubrat += 1
+        continue  # перезапуск цикла, не переходим к след. букве
+    i += 1  # переходим к след. букве
+print(skolko_ubrat)
+```
+
+### 10) 791A - Bear and Big Brother - https://codeforces.com/problemset/problem/791/A
+
+```python
+ages = input().split(" ")
+years = 0
+age_limak, age_bob = int(ages[0]), int(ages[1])
+while age_limak <= age_bob:
+    age_limak *= 3
+    age_bob *= 2
+    years += 1
+print(years)
 ```
