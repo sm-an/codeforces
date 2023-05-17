@@ -240,7 +240,19 @@ print(word)
 ```
 ---
 
-# 14) Пропустил пока, надо вернуться и ознакомиться 
+### 14) 977A - Wrong Subtraction - https://codeforces.com/problemset/problem/977/A
+
+```python
+s = input().split(' ')
+s, steps = int(s[0]), int(s[1])
+
+for i in range(steps):
+    if s % 10 != 0:  # если число не кончается на ноль
+        s-=1
+    else:
+        s//=10  # убирает ноль
+print(s)
+```
 
 ---
 
@@ -255,3 +267,34 @@ if four_count + seven_count == 4 or four_count + seven_count == 7:
 else:
     print("NO")
 ```
+
+---
+
+### 16) 116A - Tram - https://codeforces.com/problemset/problem/116/A
+
+```python
+s = int(input())
+current_people = 0
+max_people = 0
+for i in range(s):
+    a = input().split(' ')
+    ain, aout = int(a[1]), int(a[0])
+    current_people = current_people - aout + ain
+    if current_people > max_people:
+        max_people = current_people
+print(max_people)
+```
+
+---
+
+### 17) 41A - Translation - https://codeforces.com/problemset/problem/41/A
+
+```python
+word1, word2 = input(), input()
+
+if word1[::-1] == word2:
+    print('YES')
+else:
+    print('NO')
+```
+
