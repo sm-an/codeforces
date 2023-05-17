@@ -151,6 +151,8 @@ else:
     print("CHAT WITH HER!")
 ```
 
+---
+
 ### 9) 266A - Stones on the Table - https://codeforces.com/problemset/problem/266/A
 
 ```python
@@ -167,6 +169,8 @@ while i < len(stones) - 1:  # -1 за длину -> индекс, -1 за пре
 print(skolko_ubrat)
 ```
 
+---
+
 ### 10) 791A - Bear and Big Brother - https://codeforces.com/problemset/problem/791/A
 
 ```python
@@ -178,4 +182,76 @@ while age_limak <= age_bob:
     age_bob *= 2
     years += 1
 print(years)
+```
+
+---
+
+### 11) 546A - Soldier and Bananas- https://codeforces.com/problemset/problem/546/A
+
+```python
+first_price, have_money, count_bananas = input().split(" ")
+first_price, have_money, count_bananas = int(first_price), int(have_money), int(count_bananas)
+for i in range(1, count_bananas+1):
+    have_money -= first_price * i
+
+# если в минус, значит занимаем денег
+if have_money < 0:
+    have_money *= -1
+    print(have_money)
+else:  # если не в минус, значит занимать не нужно
+    print(0)
+```
+
+---
+
+### 12) 617A - Elephant - https://codeforces.com/problemset/problem/617/A
+
+```python
+distance = int(input())
+variants_to_move = [5, 4, 3, 2, 1]
+steps = 0
+for variant in variants_to_move:
+    while distance // variant:  # могу ли пройти шаг (5 или 4 или...) (рез-т // > 0)
+        distance -= variant
+        steps += 1
+print(steps)
+```
+
+---
+
+### 13) 59A - Word - https://codeforces.com/problemset/problem/59/A
+
+```python
+word = input()
+malenkie = 0
+bolshie = 0
+
+for letter in word:
+    if letter.isupper():  # если большая
+        bolshie += 1
+    elif letter.islower():  # если маленькая
+        malenkie += 1
+
+if bolshie > malenkie:
+    word = word.upper()
+else:  # сказано, что даже если кол-во равное, то все маленькие
+    word = word.lower()
+print(word)
+```
+---
+
+# 14) Пропустил пока, надо вернуться и ознакомиться 
+
+---
+
+### 15) 110A - Nearly Lucky Number - https://codeforces.com/problemset/problem/110/A
+
+```python
+num = input()
+four_count = num.count("4")
+seven_count = num.count("7")
+if four_count + seven_count == 4 or four_count + seven_count == 7:
+    print("YES")
+else:
+    print("NO")
 ```
